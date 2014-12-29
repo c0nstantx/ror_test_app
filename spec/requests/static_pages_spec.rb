@@ -10,10 +10,16 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-      $subtitle = "Home"
       visit '/static_pages/home'
       page.should have_selector('title',
-        :text => title)
+        :text => "Ruby on Rails Tutorial Sample App")
+    end
+
+    it "should not have a custom page title" do
+      $subtitle = "Home"
+      visit '/static_pages/home'
+      page.should_not have_selector('title',
+        :text => $subtitle)
     end
   end
 
