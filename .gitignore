@@ -21,3 +21,4 @@ doc/
 .project
 .DS Store
 bundler_stubs/
+/vendor/bundle

@@ -13,7 +13,7 @@ describe "Static pages" do
       $subtitle = "Home"
       visit '/static_pages/home'
       page.should have_selector('title',
-                          :text => title)
+        :text => title)
     end
   end
 
@@ -27,7 +27,7 @@ describe "Static pages" do
       $subtitle = "Help"
       visit '/static_pages/help'
       page.should have_selector('title',
-                          :text => title)
+        :text => title)
     end
   end
 
@@ -41,7 +41,7 @@ describe "Static pages" do
       $subtitle = "About Us"
       visit '/static_pages/about'
       page.should have_selector('title',
-                          :text => title)
+        :text => title)
     end
   end
 
@@ -55,7 +55,7 @@ describe "Static pages" do
       $subtitle = "Contact"
       visit '/static_pages/contact'
       page.should have_selector('title',
-                          :text => title)
+        :text => title)
     end
   end
 end
