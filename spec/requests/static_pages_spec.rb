@@ -1,8 +1,7 @@
 require 'spec_helper'
 
-BASE_TITLE = "Ruby on Rails Tutorial Sample App"
-
 describe "Static pages" do
+  let(:title) { "Ruby on Rails Tutorial Sample App | #{$subtitle}" }
 
   describe "Home page" do
     it "should have the h1 'Sample All'" do
@@ -11,9 +10,10 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
+      $subtitle = "Home"
       visit '/static_pages/home'
       page.should have_selector('title',
-                          :text => BASE_TITLE + " | Home")
+                          :text => title)
     end
   end
 
@@ -24,9 +24,10 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
+      $subtitle = "Help"
       visit '/static_pages/help'
       page.should have_selector('title',
-                          :text => BASE_TITLE + " | Help")
+                          :text => title)
     end
   end
 
@@ -37,9 +38,24 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
+      $subtitle = "About Us"
       visit '/static_pages/about'
       page.should have_selector('title',
-                          :text => BASE_TITLE + " | About Us")
+                          :text => title)
+    end
+  end
+
+  describe "Contact page" do
+    it "should have the h1 'Contact'" do
+      visit '/static_pages/contact'
+      page.should have_selector('h1', :text => 'Contact')
+    end
+
+    it "should have the right title" do
+      $subtitle = "Contact"
+      visit '/static_pages/contact'
+      page.should have_selector('title',
+                          :text => title)
     end
   end
 end
