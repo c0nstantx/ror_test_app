@@ -1,4 +1,6 @@
 <% if @user.errors.any? %>
+  <% # Remove error message of password digest %>
+  <% @user.errors.delete(:password_digest) %>
   <div id="error_explanation">
     <div class="alert alert-error">
       The form contains <%= pluralize(@user.errors.count, "error") %>
