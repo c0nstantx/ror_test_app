@@ -64,7 +64,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: $grayDarker;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -142,7 +142,7 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   padding: 10px;
-  height: auto;
+  height: 100% !important;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -156,4 +156,18 @@ input, textarea, select, .uneditable-input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+/* users index */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
 }
