@@ -199,3 +199,14 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+/* home status */
+.characters_count {
+  color: $grayLight;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: .9em;
+  span {
+    display: inline;
+  }
+}
